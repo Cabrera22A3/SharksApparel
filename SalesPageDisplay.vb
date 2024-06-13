@@ -154,8 +154,6 @@ Public Class SalesPageDisplay
     Public Sub delete()
         If MsgBox("Are you sure to Delete this Product?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
             Try
-                Dim ms As New MemoryStream
-                PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
                 Dim cmd As New MySqlCommand(
                     "DELETE FROM `productstb` WHERE `product_id`=@product_id", conn
                 )
