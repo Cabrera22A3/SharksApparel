@@ -1,4 +1,6 @@
-﻿Public Class Home
+﻿Imports Org.BouncyCastle.Pqc.Crypto.Saber
+
+Public Class Home
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -25,7 +27,7 @@
     End Sub
 
     Private Sub SalesBtn_Click(sender As Object, e As EventArgs) Handles SalesBtn.Click
-        switchPanel(Form)
+        switchPanel(SalesPageDisplay)
     End Sub
 
     Private Sub AboutUsBtn_Click(sender As Object, e As EventArgs) Handles AboutUsBtn.Click

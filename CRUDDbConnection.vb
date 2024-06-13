@@ -2,7 +2,7 @@
 
 Module CRUDDbConnection
     Public Function strconnection() As MySqlConnection
-        Return New MySqlConnection("server=localhost;user id=root;password=;database=test")
+        Return New MySqlConnection("server= 127.0.0.1;username=root;password=;database=test")
     End Function
     Public strcon As MySqlConnection = strconnection()
 

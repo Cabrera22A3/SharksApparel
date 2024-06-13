@@ -36,4 +36,6 @@ C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\runtimes\win-x
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.ProductsPage.resources
-C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.Form.resources
+C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.SalesPageDisplay.resources
+C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.sourcelink.json
+C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\NuGet.Frameworks.dll

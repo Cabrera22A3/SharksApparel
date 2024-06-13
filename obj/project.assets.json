@@ -162,6 +162,15 @@
           }
         }
       },
+      "NuGet.Frameworks/6.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {}
+        }
+      },
       "System.Buffers/4.5.1": {
         "type": "package",
         "compile": {
@@ -736,6 +745,21 @@
         "runtimes/win-x64/native/k5sprt64.dll",
         "runtimes/win-x64/native/krb5_64.dll",
         "runtimes/win-x64/native/krbcc64.dll"
+      ]
+    },
+    "NuGet.Frameworks/6.10.0": {
+      "sha512": "bKaC87Q8rxK7ozFN9Eyo0YVUmd4r2s8pbNxHI7sHRqL16OAP0yEdCU5wpDkG9cKLHpZCahgoQUfAVC0UadVU+A==",
+      "type": "package",
+      "path": "nuget.frameworks/6.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net472/NuGet.Frameworks.dll",
+        "lib/netstandard2.0/NuGet.Frameworks.dll",
+        "nuget.frameworks.6.10.0.nupkg.sha512",
+        "nuget.frameworks.nuspec"
       ]
     },
     "System.Buffers/4.5.1": {
@@ -1782,7 +1806,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "MySql.Data >= 8.4.0"
+      "MySql.Data >= 8.4.0",
+      "NuGet.Frameworks >= 6.10.0"
     ]
   },
   "packageFolders": {
@@ -1833,6 +1858,10 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.4.0, )"
+          },
+          "NuGet.Frameworks": {
+            "target": "Package",
+            "version": "[6.10.0, )"
           }
         },
         "imports": [
