@@ -29,7 +29,6 @@ Partial Class Home
         Panel2 = New Panel()
         AboutUsBtn = New Button()
         SalesBtn = New Button()
-        SuppliersBtn = New Button()
         ProductsBtn = New Button()
         HomeBtn = New Button()
         Panel3 = New Panel()
@@ -77,7 +76,6 @@ Partial Class Home
         Panel2.BackColor = Color.LightBlue
         Panel2.Controls.Add(AboutUsBtn)
         Panel2.Controls.Add(SalesBtn)
-        Panel2.Controls.Add(SuppliersBtn)
         Panel2.Controls.Add(ProductsBtn)
         Panel2.Controls.Add(HomeBtn)
         Panel2.Location = New Point(0, 62)
@@ -90,7 +88,7 @@ Partial Class Home
         AboutUsBtn.BackColor = Color.Azure
         AboutUsBtn.Cursor = Cursors.Hand
         AboutUsBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        AboutUsBtn.Location = New Point(0, 276)
+        AboutUsBtn.Location = New Point(0, 211)
         AboutUsBtn.Name = "AboutUsBtn"
         AboutUsBtn.Size = New Size(188, 58)
         AboutUsBtn.TabIndex = 4
@@ -102,24 +100,12 @@ Partial Class Home
         SalesBtn.BackColor = Color.Azure
         SalesBtn.Cursor = Cursors.Hand
         SalesBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        SalesBtn.Location = New Point(0, 212)
+        SalesBtn.Location = New Point(0, 147)
         SalesBtn.Name = "SalesBtn"
         SalesBtn.Size = New Size(188, 58)
         SalesBtn.TabIndex = 3
         SalesBtn.Text = "Sales"
         SalesBtn.UseVisualStyleBackColor = False
-        ' 
-        ' SuppliersBtn
-        ' 
-        SuppliersBtn.BackColor = Color.Azure
-        SuppliersBtn.Cursor = Cursors.Hand
-        SuppliersBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        SuppliersBtn.Location = New Point(0, 148)
-        SuppliersBtn.Name = "SuppliersBtn"
-        SuppliersBtn.Size = New Size(188, 58)
-        SuppliersBtn.TabIndex = 2
-        SuppliersBtn.Text = "Suppliers"
-        SuppliersBtn.UseVisualStyleBackColor = False
         ' 
         ' ProductsBtn
         ' 
@@ -142,7 +128,7 @@ Partial Class Home
         HomeBtn.Name = "HomeBtn"
         HomeBtn.Size = New Size(188, 58)
         HomeBtn.TabIndex = 0
-        HomeBtn.Text = "Home"
+        HomeBtn.Text = "Dashboard"
         HomeBtn.UseVisualStyleBackColor = False
         ' 
         ' Panel3
@@ -168,7 +154,7 @@ Partial Class Home
         MaximizeBox = False
         Name = "Home"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "SharksApparel - Home"
+        Text = "Admin - SharksApparel - Home"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -178,7 +164,6 @@ Partial Class Home
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents SuppliersBtn As Button
     Friend WithEvents ProductsBtn As Button
     Friend WithEvents HomeBtn As Button
     Friend WithEvents PictureBox1 As PictureBox

@@ -17,7 +17,6 @@ C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\refint\SharksA
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.pdb
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.genruntimeconfig.cache
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\ref\SharksApparel.dll
-C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.SuppliersPage.resources
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.HomePage.resources
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.AboutUsPage.resources
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\MySql.Data.dll

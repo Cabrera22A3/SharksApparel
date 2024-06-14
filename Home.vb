@@ -14,12 +14,6 @@ Public Class Home
         panel.TopLevel = False
         Panel3.Controls.Add(panel)
         panel.Show()
-
-
-    End Sub
-
-    Private Sub SuppliersBtn_Click(sender As Object, e As EventArgs) Handles SuppliersBtn.Click
-        switchPanel(SuppliersPage)
     End Sub
 
     Private Sub HomeBtn_Click(sender As Object, e As EventArgs) Handles HomeBtn.Click

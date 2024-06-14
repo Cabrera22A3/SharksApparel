@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("SharksApparel"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc8c50ca6f52867f6e107cb1252ea5c4e56dfcaf"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bacc965b95f8dd28e3bfea91a4b68d91aca1099"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("SharksApparel"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("SharksApparel"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
