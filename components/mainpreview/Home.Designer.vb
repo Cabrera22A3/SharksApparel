@@ -154,7 +154,7 @@ Partial Class Home
         MaximizeBox = False
         Name = "Home"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Admin - SharksApparel - Home"
+        Text = "SharksApparel - Home"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

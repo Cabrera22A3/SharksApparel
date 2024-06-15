@@ -63,7 +63,7 @@ Public Class SalesPageDisplay
 
             i = cmd.ExecuteNonQuery
             If i > 0 Then
-                MessageBox.Show("Save Success!", "TEST", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Save Success!", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Save Failed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
@@ -127,7 +127,7 @@ Public Class SalesPageDisplay
 
             i = cmd.ExecuteNonQuery
             If i > 0 Then
-                MessageBox.Show("Update Success!", "TEST", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Update Success!", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Update Failed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
@@ -161,7 +161,7 @@ Public Class SalesPageDisplay
                 cmd.Parameters.AddWithValue("@product_id", TextBox1.Text)
                 i = cmd.ExecuteNonQuery
                 If i > 0 Then
-                    MessageBox.Show("DELETE Success!", "TEST", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("DELETE Success!", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show("DELETE Failed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
@@ -208,5 +208,9 @@ Public Class SalesPageDisplay
         Finally
             conn.Close()
         End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        PictureBox1.Image = Nothing
     End Sub
 End Class

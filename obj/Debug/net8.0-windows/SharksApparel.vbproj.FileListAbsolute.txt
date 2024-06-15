@@ -11,7 +11,6 @@ C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\SharksApparel.
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\SharksApparel.runtimeconfig.json
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\SharksApparel.dll
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\SharksApparel.pdb
-C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.Form1.resources
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.dll
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\refint\SharksApparel.dll
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.pdb
@@ -38,3 +37,5 @@ C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.SalesPageDisplay.resources
 C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.sourcelink.json
 C:\Users\User\source\repos\SharksApparel\bin\Debug\net8.0-windows\NuGet.Frameworks.dll
+C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.LogIn.resources
+C:\Users\User\source\repos\SharksApparel\obj\Debug\net8.0-windows\SharksApparel.AdminDashboard.resources

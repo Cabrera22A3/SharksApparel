@@ -1,10 +1,4 @@
-﻿Imports Org.BouncyCastle.Pqc.Crypto.Saber
-
-Public Class Home
-    Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
+﻿Public Class AdminHome
     Private Sub ProductsBtn_Click(sender As Object, e As EventArgs) Handles ProductsBtn.Click
         switchPanel(ProductsPage)
     End Sub
@@ -17,7 +11,7 @@ Public Class Home
     End Sub
 
     Private Sub HomeBtn_Click(sender As Object, e As EventArgs) Handles HomeBtn.Click
-        switchPanel(HomePage)
+        switchPanel(AdminDashboard)
     End Sub
 
     Private Sub SalesBtn_Click(sender As Object, e As EventArgs) Handles SalesBtn.Click
@@ -26,5 +20,9 @@ Public Class Home
 
     Private Sub AboutUsBtn_Click(sender As Object, e As EventArgs) Handles AboutUsBtn.Click
         switchPanel(AboutUsPage)
+    End Sub
+
+    Private Sub AdminHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        switchPanel(AdminDashboard)
     End Sub
 End Class
