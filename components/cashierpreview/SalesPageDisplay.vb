@@ -1,5 +1,6 @@
 ﻿Imports Google.Protobuf.WellKnownTypes
 Imports MySql.Data.MySqlClient
+Imports System.Drawing.Configuration
 Imports System.IO
 
 Public Class SalesPageDisplay
@@ -42,7 +43,10 @@ Public Class SalesPageDisplay
     Public Sub save()
         Try
             Dim ms As New MemoryStream
-            PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
+            Dim imga As Image = PictureBox1.Image
+            Dim bmpImage As New Bitmap(imga)
+            bmpImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
+            Dim data As Byte() = ms.GetBuffer
             Dim cmd As New MySqlCommand(
                 "INSERT INTO `productstb`(`product_id`, `name`, `description`, `category_id`, `size`, `color`, `cost_price`, `retail_price`, `stock_quantity`, `photo`) 
                 VALUES (@product_id,@name,@description,@category_id,@size,@color,@cost_price,@retail_price,@stock_quantity,@photo)", conn
@@ -57,7 +61,7 @@ Public Class SalesPageDisplay
             cmd.Parameters.AddWithValue("@cost_price", CDec(TextBox6.Text))
             cmd.Parameters.AddWithValue("@retail_price", CDec(TextBox7.Text))
             cmd.Parameters.AddWithValue("@stock_quantity", TextBox8.Text)
-            cmd.Parameters.Add("@photo", MySqlDbType.Blob).Value = ms.ToArray()
+            cmd.Parameters.Add("@photo", MySqlDbType.LongBlob).Value = ms.ToArray()
 
             'conn.Open()
 
@@ -87,8 +91,14 @@ Public Class SalesPageDisplay
         TextBox8.Clear()
         PictureBox1.Image = Nothing
     End Sub
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick, DataGridView1.CellContentClick
+        ' Prevent any action when a cell is clicked
+        DataGridView1.ClearSelection()
+    End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        DataGridView1.ClearSelection()
+
         TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value
         TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value
         TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value

@@ -22,6 +22,7 @@ Partial Class SalesPageDisplay
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SalesPageDisplay))
         Label1 = New Label()
         Label2 = New Label()
@@ -52,7 +53,7 @@ Partial Class SalesPageDisplay
         Column7 = New DataGridViewTextBoxColumn()
         Column8 = New DataGridViewTextBoxColumn()
         Column9 = New DataGridViewTextBoxColumn()
-        Column10 = New DataGridViewTextBoxColumn()
+        Column10 = New DataGridViewImageColumn()
         PictureBox1 = New PictureBox()
         Button1 = New Button()
         Button2 = New Button()
@@ -226,10 +227,28 @@ Partial Class SalesPageDisplay
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AccessibleRole = AccessibleRole.None
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.BorderStyle = BorderStyle.Fixed3D
+        DataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10})
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9.0F)
+        DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
         DataGridView1.Location = New Point(341, 190)
+        DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
+        DataGridView1.RowTemplate.Height = 100
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect
         DataGridView1.Size = New Size(466, 337)
         DataGridView1.TabIndex = 19
         ' 
@@ -238,6 +257,7 @@ Partial Class SalesPageDisplay
         Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column1.HeaderText = "Product ID"
         Column1.Name = "Column1"
+        Column1.ReadOnly = True
         Column1.Width = 81
         ' 
         ' Column2
@@ -245,6 +265,7 @@ Partial Class SalesPageDisplay
         Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column2.HeaderText = "Name of Product"
         Column2.Name = "Column2"
+        Column2.ReadOnly = True
         Column2.Width = 113
         ' 
         ' Column3
@@ -252,12 +273,14 @@ Partial Class SalesPageDisplay
         Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column3.HeaderText = "Description of Product"
         Column3.Name = "Column3"
+        Column3.ReadOnly = True
         ' 
         ' Column4
         ' 
         Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column4.HeaderText = "Category ID"
         Column4.Name = "Column4"
+        Column4.ReadOnly = True
         Column4.Width = 87
         ' 
         ' Column5
@@ -265,6 +288,7 @@ Partial Class SalesPageDisplay
         Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column5.HeaderText = "Size of Product"
         Column5.Name = "Column5"
+        Column5.ReadOnly = True
         Column5.Width = 102
         ' 
         ' Column6
@@ -272,6 +296,7 @@ Partial Class SalesPageDisplay
         Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column6.HeaderText = "Color of Product"
         Column6.Name = "Column6"
+        Column6.ReadOnly = True
         Column6.Width = 110
         ' 
         ' Column7
@@ -279,6 +304,7 @@ Partial Class SalesPageDisplay
         Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column7.HeaderText = "Cost Price"
         Column7.Name = "Column7"
+        Column7.ReadOnly = True
         Column7.Width = 79
         ' 
         ' Column8
@@ -286,6 +312,7 @@ Partial Class SalesPageDisplay
         Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column8.HeaderText = "Retail Price"
         Column8.Name = "Column8"
+        Column8.ReadOnly = True
         Column8.Width = 83
         ' 
         ' Column9
@@ -293,14 +320,18 @@ Partial Class SalesPageDisplay
         Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Column9.HeaderText = "Stock Quantity"
         Column9.Name = "Column9"
+        Column9.ReadOnly = True
         Column9.Width = 101
         ' 
         ' Column10
         ' 
-        Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
         Column10.HeaderText = "Photo"
+        Column10.ImageLayout = DataGridViewImageCellLayout.Zoom
         Column10.Name = "Column10"
-        Column10.Width = 64
+        Column10.ReadOnly = True
+        Column10.Resizable = DataGridViewTriState.True
+        Column10.SortMode = DataGridViewColumnSortMode.Automatic
         ' 
         ' PictureBox1
         ' 
@@ -463,6 +494,9 @@ Partial Class SalesPageDisplay
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TextBox9 As TextBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -472,8 +506,5 @@ Partial Class SalesPageDisplay
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Column10 As DataGridViewTextBoxColumn
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Column10 As DataGridViewImageColumn
 End Class
