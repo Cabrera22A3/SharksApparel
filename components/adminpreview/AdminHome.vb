@@ -25,4 +25,12 @@
     Private Sub AdminHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         switchPanel(AdminDashboard)
     End Sub
+
+    Private Sub ProductApprovalBtn_Click(sender As Object, e As EventArgs) Handles ProductApprovalBtn.Click
+        switchPanel(ProductApprovalPage)
+    End Sub
+
+    Private Sub AddUserBtn_Click(sender As Object, e As EventArgs) Handles AddUserBtn.Click
+        switchPanel(AddUserPage)
+    End Sub
 End Class

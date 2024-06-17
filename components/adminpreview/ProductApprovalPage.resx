@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>At Sharks Apparel, our mission is to provide stylish, high-quality clothing that respects our planet and supports our community. We are committed to sustainability, innovation, and the spirit of adventure that defines the ocean lifestyle.</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Sharks Apparel was founded in 2024 by entrepreneur and fashion enthusiast Sharks Apparel in the beautiful island of Boracay. Inspired by the dynamic and fearless nature of sharks, Sharks Apparel aimed to create a clothing brand that embodied strength, resilience, and cutting-edge style. </value>
-  </data>
 </root>

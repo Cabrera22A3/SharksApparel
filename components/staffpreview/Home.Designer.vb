@@ -104,7 +104,7 @@ Partial Class Home
         SalesBtn.Name = "SalesBtn"
         SalesBtn.Size = New Size(188, 58)
         SalesBtn.TabIndex = 3
-        SalesBtn.Text = "Sales"
+        SalesBtn.Text = "Sales Stock"
         SalesBtn.UseVisualStyleBackColor = False
         ' 
         ' ProductsBtn

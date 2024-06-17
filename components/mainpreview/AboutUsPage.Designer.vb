@@ -26,10 +26,10 @@ Partial Class AboutUsPage
         Label1 = New Label()
         Label2 = New Label()
         TableLayoutPanel1 = New TableLayoutPanel()
+        Label4 = New Label()
+        Panel2 = New Panel()
         Panel1 = New Panel()
         Label3 = New Label()
-        Panel2 = New Panel()
-        Label4 = New Label()
         TableLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -82,6 +82,25 @@ Partial Class AboutUsPage
         TableLayoutPanel1.Size = New Size(795, 515)
         TableLayoutPanel1.TabIndex = 4
         ' 
+        ' Label4
+        ' 
+        Label4.Font = New Font("Verdana", 9.75F)
+        Label4.Location = New Point(199, 343)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(437, 119)
+        Label4.TabIndex = 5
+        Label4.Text = resources.GetString("Label4.Text")
+        Label4.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Panel2
+        ' 
+        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
+        Panel2.BackColor = Color.DodgerBlue
+        Panel2.Location = New Point(232, 331)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(370, 9)
+        Panel2.TabIndex = 6
+        ' 
         ' Panel1
         ' 
         Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
@@ -101,25 +120,6 @@ Partial Class AboutUsPage
         Label3.TabIndex = 5
         Label3.Text = resources.GetString("Label3.Text")
         Label3.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Panel2
-        ' 
-        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom
-        Panel2.BackColor = Color.DodgerBlue
-        Panel2.Location = New Point(232, 331)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(370, 9)
-        Panel2.TabIndex = 6
-        ' 
-        ' Label4
-        ' 
-        Label4.Font = New Font("Verdana", 9.75F)
-        Label4.Location = New Point(199, 343)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(437, 119)
-        Label4.TabIndex = 5
-        Label4.Text = resources.GetString("Label4.Text")
-        Label4.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' AboutUsPage
         ' 

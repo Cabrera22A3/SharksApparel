@@ -28,6 +28,8 @@ Partial Class AdminHome
         Label1 = New Label()
         PictureBox1 = New PictureBox()
         Panel2 = New Panel()
+        ProductApprovalBtn = New Button()
+        AddUserBtn = New Button()
         AboutUsBtn = New Button()
         SalesBtn = New Button()
         ProductsBtn = New Button()
@@ -86,6 +88,8 @@ Partial Class AdminHome
         ' Panel2
         ' 
         Panel2.BackColor = Color.LightBlue
+        Panel2.Controls.Add(ProductApprovalBtn)
+        Panel2.Controls.Add(AddUserBtn)
         Panel2.Controls.Add(AboutUsBtn)
         Panel2.Controls.Add(SalesBtn)
         Panel2.Controls.Add(ProductsBtn)
@@ -95,12 +99,36 @@ Partial Class AdminHome
         Panel2.Size = New Size(188, 542)
         Panel2.TabIndex = 5
         ' 
+        ' ProductApprovalBtn
+        ' 
+        ProductApprovalBtn.BackColor = Color.Azure
+        ProductApprovalBtn.Cursor = Cursors.Hand
+        ProductApprovalBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
+        ProductApprovalBtn.Location = New Point(0, 148)
+        ProductApprovalBtn.Name = "ProductApprovalBtn"
+        ProductApprovalBtn.Size = New Size(188, 58)
+        ProductApprovalBtn.TabIndex = 1
+        ProductApprovalBtn.Text = "Product Approval"
+        ProductApprovalBtn.UseVisualStyleBackColor = False
+        ' 
+        ' AddUserBtn
+        ' 
+        AddUserBtn.BackColor = Color.Azure
+        AddUserBtn.Cursor = Cursors.Hand
+        AddUserBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
+        AddUserBtn.Location = New Point(0, 276)
+        AddUserBtn.Name = "AddUserBtn"
+        AddUserBtn.Size = New Size(188, 58)
+        AddUserBtn.TabIndex = 1
+        AddUserBtn.Text = "Add User"
+        AddUserBtn.UseVisualStyleBackColor = False
+        ' 
         ' AboutUsBtn
         ' 
         AboutUsBtn.BackColor = Color.Azure
         AboutUsBtn.Cursor = Cursors.Hand
         AboutUsBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        AboutUsBtn.Location = New Point(0, 211)
+        AboutUsBtn.Location = New Point(0, 340)
         AboutUsBtn.Name = "AboutUsBtn"
         AboutUsBtn.Size = New Size(188, 58)
         AboutUsBtn.TabIndex = 4
@@ -112,11 +140,11 @@ Partial Class AdminHome
         SalesBtn.BackColor = Color.Azure
         SalesBtn.Cursor = Cursors.Hand
         SalesBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        SalesBtn.Location = New Point(0, 147)
+        SalesBtn.Location = New Point(0, 212)
         SalesBtn.Name = "SalesBtn"
         SalesBtn.Size = New Size(188, 58)
         SalesBtn.TabIndex = 3
-        SalesBtn.Text = "Sales"
+        SalesBtn.Text = "Sales Stock"
         SalesBtn.UseVisualStyleBackColor = False
         ' 
         ' ProductsBtn
@@ -171,4 +199,6 @@ Partial Class AdminHome
     Friend WithEvents SalesBtn As Button
     Friend WithEvents ProductsBtn As Button
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents AddUserBtn As Button
+    Friend WithEvents ProductApprovalBtn As Button
 End Class

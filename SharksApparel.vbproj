@@ -9,12 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="components\staffpreview\**" />
-    <EmbeddedResource Remove="components\staffpreview\**" />
-    <None Remove="components\staffpreview\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />

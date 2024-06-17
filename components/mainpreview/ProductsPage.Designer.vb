@@ -28,6 +28,10 @@ Partial Class ProductsPage
         Button3 = New Button()
         Button4 = New Button()
         Button5 = New Button()
+        Panel1 = New Panel()
+        Button1 = New Button()
+        Button6 = New Button()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Products1
@@ -99,6 +103,43 @@ Partial Class ProductsPage
         Button5.TextAlign = ContentAlignment.BottomCenter
         Button5.UseVisualStyleBackColor = False
         ' 
+        ' Panel1
+        ' 
+        Panel1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(Button6)
+        Panel1.Location = New Point(147, 109)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(516, 309)
+        Panel1.TabIndex = 20
+        Panel1.Visible = False
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.Red
+        Button1.FlatStyle = FlatStyle.Popup
+        Button1.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
+        Button1.ForeColor = SystemColors.ButtonHighlight
+        Button1.Location = New Point(391, 264)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(120, 40)
+        Button1.TabIndex = 1
+        Button1.Text = "DECLINE"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' Button6
+        ' 
+        Button6.BackColor = Color.Lime
+        Button6.FlatStyle = FlatStyle.Popup
+        Button6.Font = New Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button6.Location = New Point(3, 264)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(120, 40)
+        Button6.TabIndex = 0
+        Button6.Text = "ACCEPT"
+        Button6.UseVisualStyleBackColor = False
+        ' 
         ' ProductsPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -106,6 +147,7 @@ Partial Class ProductsPage
         AutoScroll = True
         BackColor = Color.LightCyan
         ClientSize = New Size(819, 539)
+        Controls.Add(Panel1)
         Controls.Add(Button5)
         Controls.Add(Button4)
         Controls.Add(Button3)
@@ -117,6 +159,7 @@ Partial Class ProductsPage
         Name = "ProductsPage"
         ShowInTaskbar = False
         Text = "ProductsPage"
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents Products1 As Button
@@ -130,4 +173,6 @@ Partial Class ProductsPage
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button6 As Button
 End Class
