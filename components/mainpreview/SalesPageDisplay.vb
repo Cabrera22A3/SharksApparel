@@ -42,6 +42,10 @@ Public Class SalesPageDisplay
 
     Public Sub save()
         Try
+            If PictureBox1.Image Is Nothing Then
+                MessageBox.Show("Image must be inserted again.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
             Dim ms As New MemoryStream
             Dim imga As Image = PictureBox1.Image
             Dim bmpImage As New Bitmap(imga)
@@ -91,14 +95,8 @@ Public Class SalesPageDisplay
         TextBox8.Clear()
         PictureBox1.Image = Nothing
     End Sub
-    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick, DataGridView1.CellContentClick
-        ' Prevent any action when a cell is clicked
-        DataGridView1.ClearSelection()
-    End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        DataGridView1.ClearSelection()
-
         TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value
         TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value
         TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value
@@ -116,6 +114,10 @@ Public Class SalesPageDisplay
 
     Sub Edit()
         Try
+            If PictureBox1.Image Is Nothing Then
+                MessageBox.Show("Image must be inserted again.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
             Dim ms As New MemoryStream
             PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
             Dim cmd As New MySqlCommand(
@@ -194,6 +196,7 @@ Public Class SalesPageDisplay
         clear()
     End Sub
 
+    'search bar
     Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
         DataGridView1.Rows.Clear()
         Try

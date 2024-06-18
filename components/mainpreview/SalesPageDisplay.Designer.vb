@@ -44,6 +44,15 @@ Partial Class SalesPageDisplay
         TextBox7 = New TextBox()
         TextBox8 = New TextBox()
         DataGridView1 = New DataGridView()
+        PictureBox1 = New PictureBox()
+        Button1 = New Button()
+        Button2 = New Button()
+        Button3 = New Button()
+        Button4 = New Button()
+        Button5 = New Button()
+        Button6 = New Button()
+        Label11 = New Label()
+        TextBox9 = New TextBox()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
         Column3 = New DataGridViewTextBoxColumn()
@@ -54,15 +63,6 @@ Partial Class SalesPageDisplay
         Column8 = New DataGridViewTextBoxColumn()
         Column9 = New DataGridViewTextBoxColumn()
         Column10 = New DataGridViewImageColumn()
-        PictureBox1 = New PictureBox()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
-        Button4 = New Button()
-        Button5 = New Button()
-        Button6 = New Button()
-        Label11 = New Label()
-        TextBox9 = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -234,9 +234,8 @@ Partial Class SalesPageDisplay
         DataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10})
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = SystemColors.HighlightText
-        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9.0F)
+        DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
         DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
@@ -246,92 +245,14 @@ Partial Class SalesPageDisplay
         DataGridView1.Location = New Point(341, 190)
         DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.ReadOnly = True
         DataGridView1.RowTemplate.Height = 100
         DataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect
         DataGridView1.Size = New Size(466, 337)
         DataGridView1.TabIndex = 19
-        ' 
-        ' Column1
-        ' 
-        Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column1.HeaderText = "Product ID"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        Column1.Width = 81
-        ' 
-        ' Column2
-        ' 
-        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column2.HeaderText = "Name of Product"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        Column2.Width = 113
-        ' 
-        ' Column3
-        ' 
-        Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column3.HeaderText = "Description of Product"
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        ' 
-        ' Column4
-        ' 
-        Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column4.HeaderText = "Category ID"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
-        Column4.Width = 87
-        ' 
-        ' Column5
-        ' 
-        Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column5.HeaderText = "Size of Product"
-        Column5.Name = "Column5"
-        Column5.ReadOnly = True
-        Column5.Width = 102
-        ' 
-        ' Column6
-        ' 
-        Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column6.HeaderText = "Color of Product"
-        Column6.Name = "Column6"
-        Column6.ReadOnly = True
-        Column6.Width = 110
-        ' 
-        ' Column7
-        ' 
-        Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column7.HeaderText = "Cost Price"
-        Column7.Name = "Column7"
-        Column7.ReadOnly = True
-        Column7.Width = 79
-        ' 
-        ' Column8
-        ' 
-        Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column8.HeaderText = "Retail Price"
-        Column8.Name = "Column8"
-        Column8.ReadOnly = True
-        Column8.Width = 83
-        ' 
-        ' Column9
-        ' 
-        Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        Column9.HeaderText = "Stock Quantity"
-        Column9.Name = "Column9"
-        Column9.ReadOnly = True
-        Column9.Width = 101
-        ' 
-        ' Column10
-        ' 
-        Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
-        Column10.HeaderText = "Photo"
-        Column10.ImageLayout = DataGridViewImageCellLayout.Zoom
-        Column10.Name = "Column10"
-        Column10.ReadOnly = True
-        Column10.Resizable = DataGridViewTriState.True
-        Column10.SortMode = DataGridViewColumnSortMode.Automatic
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
+        DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         ' 
         ' PictureBox1
         ' 
@@ -420,6 +341,78 @@ Partial Class SalesPageDisplay
         TextBox9.Name = "TextBox9"
         TextBox9.Size = New Size(277, 23)
         TextBox9.TabIndex = 28
+        ' 
+        ' Column1
+        ' 
+        Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column1.HeaderText = "Product ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        Column1.Width = 88
+        ' 
+        ' Column2
+        ' 
+        Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column2.HeaderText = "Name of Product"
+        Column2.Name = "Column2"
+        Column2.Width = 113
+        ' 
+        ' Column3
+        ' 
+        Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column3.HeaderText = "Description of Product"
+        Column3.Name = "Column3"
+        ' 
+        ' Column4
+        ' 
+        Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column4.HeaderText = "Category ID"
+        Column4.Name = "Column4"
+        Column4.Width = 87
+        ' 
+        ' Column5
+        ' 
+        Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column5.HeaderText = "Size of Product"
+        Column5.Name = "Column5"
+        Column5.Width = 102
+        ' 
+        ' Column6
+        ' 
+        Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column6.HeaderText = "Color of Product"
+        Column6.Name = "Column6"
+        Column6.Width = 110
+        ' 
+        ' Column7
+        ' 
+        Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column7.HeaderText = "Cost Price"
+        Column7.Name = "Column7"
+        Column7.Width = 79
+        ' 
+        ' Column8
+        ' 
+        Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column8.HeaderText = "Retail Price"
+        Column8.Name = "Column8"
+        Column8.Width = 83
+        ' 
+        ' Column9
+        ' 
+        Column9.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Column9.HeaderText = "Stock Quantity"
+        Column9.Name = "Column9"
+        Column9.Width = 101
+        ' 
+        ' Column10
+        ' 
+        Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+        Column10.HeaderText = "Photo"
+        Column10.ImageLayout = DataGridViewImageCellLayout.Zoom
+        Column10.Name = "Column10"
+        Column10.Resizable = DataGridViewTriState.True
+        Column10.SortMode = DataGridViewColumnSortMode.Automatic
         ' 
         ' SalesPageDisplay
         ' 

@@ -22,6 +22,8 @@ Partial Class AddUserPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Label1 = New Label()
         TextBox1 = New TextBox()
         Label2 = New Label()
@@ -33,7 +35,12 @@ Partial Class AddUserPage
         Button1 = New Button()
         Button2 = New Button()
         DataGridView1 = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
         Button3 = New Button()
+        ToolTip1 = New ToolTip(components)
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -95,6 +102,8 @@ Partial Class AddUserPage
         ' 
         ' ComboBox1
         ' 
+        ComboBox1.Cursor = Cursors.Hand
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.Font = New Font("Verdana", 21.75F, FontStyle.Bold)
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"admin", "staff", "cashier"})
@@ -141,11 +150,44 @@ Partial Class AddUserPage
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
+        DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4})
         DataGridView1.Location = New Point(43, 219)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         DataGridView1.Size = New Size(728, 262)
         DataGridView1.TabIndex = 15
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "User ID"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Username"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Password"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "User Role"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
         ' 
         ' Button3
         ' 
@@ -157,11 +199,17 @@ Partial Class AddUserPage
         Button3.Size = New Size(120, 40)
         Button3.TabIndex = 16
         Button3.Text = "DELETE"
+        ToolTip1.SetToolTip(Button3, "Type username beside 'Create Username:' then press delete button.")
         Button3.UseVisualStyleBackColor = False
+        ' 
+        ' ToolTip1
+        ' 
+        ToolTip1.Tag = ""
+        ToolTip1.ToolTipTitle = "Delete Using Username.."
         ' 
         ' AddUserPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.LightCyan
@@ -202,4 +250,9 @@ Partial Class AddUserPage
     Friend WithEvents Button2 As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Button3 As Button
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
