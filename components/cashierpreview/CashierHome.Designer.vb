@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Home
+Partial Class CashierHome
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,16 +22,16 @@ Partial Class Home
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CashierHome))
         Panel1 = New Panel()
         Label1 = New Label()
         PictureBox1 = New PictureBox()
+        Panel3 = New Panel()
         Panel2 = New Panel()
         AboutUsBtn = New Button()
         SalesBtn = New Button()
         ProductsBtn = New Button()
         HomeBtn = New Button()
-        Panel3 = New Panel()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -43,15 +43,15 @@ Partial Class Home
         Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(PictureBox1)
-        Panel1.Location = New Point(0, -1)
+        Panel1.Location = New Point(-1, -2)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1006, 66)
-        Panel1.TabIndex = 0
+        Panel1.TabIndex = 7
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0)
         Label1.ForeColor = SystemColors.ButtonHighlight
         Label1.Location = New Point(66, 11)
         Label1.Name = "Label1"
@@ -71,6 +71,14 @@ Partial Class Home
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.LightCyan
+        Panel3.Location = New Point(186, 64)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(819, 539)
+        Panel3.TabIndex = 9
+        ' 
         ' Panel2
         ' 
         Panel2.BackColor = Color.LightBlue
@@ -78,17 +86,17 @@ Partial Class Home
         Panel2.Controls.Add(SalesBtn)
         Panel2.Controls.Add(ProductsBtn)
         Panel2.Controls.Add(HomeBtn)
-        Panel2.Location = New Point(0, 62)
+        Panel2.Location = New Point(-1, 61)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(188, 542)
-        Panel2.TabIndex = 1
+        Panel2.TabIndex = 8
         ' 
         ' AboutUsBtn
         ' 
         AboutUsBtn.BackColor = Color.Azure
         AboutUsBtn.Cursor = Cursors.Hand
         AboutUsBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        AboutUsBtn.Location = New Point(0, 211)
+        AboutUsBtn.Location = New Point(0, 212)
         AboutUsBtn.Name = "AboutUsBtn"
         AboutUsBtn.Size = New Size(188, 58)
         AboutUsBtn.TabIndex = 4
@@ -100,11 +108,11 @@ Partial Class Home
         SalesBtn.BackColor = Color.Azure
         SalesBtn.Cursor = Cursors.Hand
         SalesBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        SalesBtn.Location = New Point(0, 147)
+        SalesBtn.Location = New Point(0, 148)
         SalesBtn.Name = "SalesBtn"
         SalesBtn.Size = New Size(188, 58)
         SalesBtn.TabIndex = 3
-        SalesBtn.Text = "Sales"
+        SalesBtn.Text = "Sales Stock"
         SalesBtn.UseVisualStyleBackColor = False
         ' 
         ' ProductsBtn
@@ -131,30 +139,22 @@ Partial Class Home
         HomeBtn.Text = "Dashboard"
         HomeBtn.UseVisualStyleBackColor = False
         ' 
-        ' Panel3
-        ' 
-        Panel3.BackColor = Color.LightCyan
-        Panel3.Location = New Point(187, 65)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(819, 539)
-        Panel3.TabIndex = 3
-        ' 
-        ' Home
+        ' CashierHome
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightCyan
         ClientSize = New Size(1004, 601)
         Controls.Add(Panel1)
-        Controls.Add(Panel2)
         Controls.Add(Panel3)
+        Controls.Add(Panel2)
         FormBorderStyle = FormBorderStyle.Fixed3D
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Location = New Point(50, 50)
         MaximizeBox = False
-        Name = "Home"
+        Name = "CashierHome"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Staff - SharksApparel "
+        Text = "Cashier - SharksApparel"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -163,12 +163,12 @@ Partial Class Home
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents ProductsBtn As Button
-    Friend WithEvents HomeBtn As Button
+    Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents SalesBtn As Button
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents AboutUsBtn As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents SalesBtn As Button
+    Friend WithEvents ProductsBtn As Button
+    Friend WithEvents HomeBtn As Button
 End Class

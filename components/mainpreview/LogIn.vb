@@ -9,10 +9,6 @@ Public Class LogIn
     Dim COMMANDrole As MySqlCommand
     Dim connLogin As New MySqlConnection("server=127.0.0.1;port=3306;username=root;password=;database=test")
     Dim i As Integer
-    Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Me.Hide()
-        'try
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
@@ -41,9 +37,12 @@ Public Class LogIn
                     If userRole = "admin" Then
                         Me.Hide()
                         AdminHome.Show()
-                    Else
+                    ElseIf userRole = "staff" Then
                         Me.Hide()
                         Home.Show()
+                    Else
+                        Me.Hide()
+                        CashierHome.Show()
                     End If
                 End If
                 READERrole.Close()

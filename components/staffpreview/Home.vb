@@ -27,8 +27,4 @@ Public Class Home
     Private Sub AboutUsBtn_Click(sender As Object, e As EventArgs) Handles AboutUsBtn.Click
         switchPanel(AboutUsPage)
     End Sub
-
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
-
-    End Sub
 End Class
