@@ -42,6 +42,7 @@ Partial Class ProductApprovalPage
         Label4 = New Label()
         TextBox2 = New TextBox()
         Button2 = New Button()
+        Button3 = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -126,11 +127,11 @@ Partial Class ProductApprovalPage
         Button1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Button1.BackColor = Color.DeepSkyBlue
         Button1.FlatStyle = FlatStyle.Popup
-        Button1.Font = New Font("Verdana", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.AliceBlue
-        Button1.Location = New Point(521, 117)
+        Button1.Location = New Point(521, 110)
         Button1.Name = "Button1"
-        Button1.Size = New Size(256, 61)
+        Button1.Size = New Size(255, 39)
         Button1.TabIndex = 4
         Button1.Text = "SAVE REQUEST"
         Button1.UseVisualStyleBackColor = False
@@ -205,6 +206,20 @@ Partial Class ProductApprovalPage
         Button2.Text = "REFRESH"
         Button2.UseVisualStyleBackColor = False
         ' 
+        ' Button3
+        ' 
+        Button3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Button3.BackColor = Color.Red
+        Button3.FlatStyle = FlatStyle.Popup
+        Button3.Font = New Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.ForeColor = Color.AliceBlue
+        Button3.Location = New Point(521, 154)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(255, 39)
+        Button3.TabIndex = 12
+        Button3.Text = "DELETE REQUEST"
+        Button3.UseVisualStyleBackColor = False
+        ' 
         ' ProductApprovalPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -212,6 +227,7 @@ Partial Class ProductApprovalPage
         AutoScroll = True
         BackColor = Color.LightCyan
         ClientSize = New Size(819, 539)
+        Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(TextBox2)
         Controls.Add(Label4)
@@ -248,4 +264,5 @@ Partial Class ProductApprovalPage
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewCheckBoxColumn
+    Friend WithEvents Button3 As Button
 End Class

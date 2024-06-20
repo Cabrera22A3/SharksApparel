@@ -41,7 +41,36 @@ Public Class SalesPageDisplay
     End Sub
 
     Public Sub save()
+        Dim query As String
+        Dim queryRole As String
+        query = "SELECT * FROM productreqtb WHERE product_id='" & TextBox1.Text & "'"
+        queryRole = "SELECT product_id FROM productreqtb WHERE product_id='" & TextBox1.Text & "'"
+        COMMAND = New MySqlCommand(query, conn)
+        READER = COMMAND.ExecuteReader
+        Dim count As Integer
+        count = 0
+        While READER.Read
+            count = count + 1
+        End While
+        READER.Close()
+        If count = 1 Then
+            Dim commandRole As New MySqlCommand(queryRole, conn)
+            commandRole.Parameters.AddWithValue("@product_id", TextBox1.Text)
+            Dim readerRole As MySqlDataReader = commandRole.ExecuteReader()
+            If readerRole.Read() Then
+                Dim userRole As String = readerRole("product_id").ToString()
+                If userRole = TextBox1.Text Then
+                    readerRole.Close()
+                    MessageBox.Show("Ask ADMIN to delete product request of this Product ID in Product Approval.", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Exit Sub
+                End If
+            End If
+            readerRole.Close()
+        End If
+        conn.Close()
+
         Try
+            conn.Open()
             If PictureBox1.Image Is Nothing Then
                 MessageBox.Show("Image must be inserted again.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
@@ -163,9 +192,41 @@ Public Class SalesPageDisplay
         Edit()
     End Sub
 
+    Dim COMMAND As MySqlCommand
+    Dim READER As MySqlDataReader
+
     Public Sub delete()
         If MsgBox("Are you sure to Delete this Product?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
+            Dim query As String
+            Dim queryRole As String
+            query = "SELECT * FROM productreqtb WHERE product_id='" & TextBox1.Text & "'"
+            queryRole = "SELECT product_id FROM productreqtb WHERE product_id='" & TextBox1.Text & "'"
+            COMMAND = New MySqlCommand(query, conn)
+            READER = COMMAND.ExecuteReader
+            Dim count As Integer
+            count = 0
+            While READER.Read
+                count = count + 1
+            End While
+            READER.Close()
+            If count = 1 Then
+                Dim commandRole As New MySqlCommand(queryRole, conn)
+                commandRole.Parameters.AddWithValue("@product_id", TextBox1.Text)
+                Dim readerRole As MySqlDataReader = commandRole.ExecuteReader()
+                If readerRole.Read() Then
+                    Dim userRole As String = readerRole("product_id").ToString()
+                    If userRole = TextBox1.Text Then
+                        readerRole.Close()
+                        MessageBox.Show("Ask ADMIN to delete product request of this Product ID in Product Approval.", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Exit Sub
+                    End If
+                End If
+                readerRole.Close()
+            End If
+            conn.Close()
+
             Try
+                conn.Open()
                 Dim cmd As New MySqlCommand(
                     "DELETE FROM `productstb` WHERE `product_id`=@product_id", conn
                 )

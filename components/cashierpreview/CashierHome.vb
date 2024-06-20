@@ -15,11 +15,11 @@
         switchPanel(ProductsPage)
     End Sub
 
-    Private Sub SalesBtn_Click(sender As Object, e As EventArgs) Handles SalesBtn.Click
-        'switchPanel(SalesTransaction)
-    End Sub
-
     Private Sub AboutUsBtn_Click(sender As Object, e As EventArgs) Handles AboutUsBtn.Click
         switchPanel(AboutUsPage)
+    End Sub
+
+    Private Sub CashierHome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        switchPanel(CashierDashboard)
     End Sub
 End Class

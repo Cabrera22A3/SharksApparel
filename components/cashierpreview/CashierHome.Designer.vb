@@ -29,7 +29,6 @@ Partial Class CashierHome
         Panel3 = New Panel()
         Panel2 = New Panel()
         AboutUsBtn = New Button()
-        SalesBtn = New Button()
         ProductsBtn = New Button()
         HomeBtn = New Button()
         Panel1.SuspendLayout()
@@ -51,7 +50,7 @@ Partial Class CashierHome
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        Label1.Font = New Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = SystemColors.ButtonHighlight
         Label1.Location = New Point(66, 11)
         Label1.Name = "Label1"
@@ -83,7 +82,6 @@ Partial Class CashierHome
         ' 
         Panel2.BackColor = Color.LightBlue
         Panel2.Controls.Add(AboutUsBtn)
-        Panel2.Controls.Add(SalesBtn)
         Panel2.Controls.Add(ProductsBtn)
         Panel2.Controls.Add(HomeBtn)
         Panel2.Location = New Point(-1, 61)
@@ -96,24 +94,12 @@ Partial Class CashierHome
         AboutUsBtn.BackColor = Color.Azure
         AboutUsBtn.Cursor = Cursors.Hand
         AboutUsBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        AboutUsBtn.Location = New Point(0, 212)
+        AboutUsBtn.Location = New Point(0, 148)
         AboutUsBtn.Name = "AboutUsBtn"
         AboutUsBtn.Size = New Size(188, 58)
         AboutUsBtn.TabIndex = 4
         AboutUsBtn.Text = "About Us"
         AboutUsBtn.UseVisualStyleBackColor = False
-        ' 
-        ' SalesBtn
-        ' 
-        SalesBtn.BackColor = Color.Azure
-        SalesBtn.Cursor = Cursors.Hand
-        SalesBtn.Font = New Font("Verdana", 14.25F, FontStyle.Bold)
-        SalesBtn.Location = New Point(0, 148)
-        SalesBtn.Name = "SalesBtn"
-        SalesBtn.Size = New Size(188, 58)
-        SalesBtn.TabIndex = 3
-        SalesBtn.Text = "Sales Stock"
-        SalesBtn.UseVisualStyleBackColor = False
         ' 
         ' ProductsBtn
         ' 
@@ -168,7 +154,6 @@ Partial Class CashierHome
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents AboutUsBtn As Button
-    Friend WithEvents SalesBtn As Button
     Friend WithEvents ProductsBtn As Button
     Friend WithEvents HomeBtn As Button
 End Class
