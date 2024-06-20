@@ -45,9 +45,16 @@ Partial Class CashierDashboard
         TextBox5 = New TextBox()
         Label7 = New Label()
         Label6 = New Label()
+        Button6 = New Button()
+        Panel5 = New Panel()
+        Label5 = New Label()
+        Label8 = New Label()
+        Label9 = New Label()
         Panel3.SuspendLayout()
+        FlowLayoutPanel2.SuspendLayout()
         Panel2.SuspendLayout()
         Panel4.SuspendLayout()
+        Panel5.SuspendLayout()
         SuspendLayout()
         ' 
         ' Button1
@@ -105,6 +112,7 @@ Partial Class CashierDashboard
         ' FlowLayoutPanel2
         ' 
         FlowLayoutPanel2.AutoScroll = True
+        FlowLayoutPanel2.Controls.Add(Panel5)
         FlowLayoutPanel2.Location = New Point(525, 60)
         FlowLayoutPanel2.Name = "FlowLayoutPanel2"
         FlowLayoutPanel2.Size = New Size(290, 367)
@@ -252,7 +260,7 @@ Partial Class CashierDashboard
         ' 
         ' CheckBox1
         ' 
-        CheckBox1.Font = New Font("Verdana", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        CheckBox1.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         CheckBox1.Location = New Point(271, 108)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(185, 53)
@@ -297,12 +305,68 @@ Partial Class CashierDashboard
         Label6.TabIndex = 1
         Label6.Text = "Product Name:"
         ' 
+        ' Button6
+        ' 
+        Button6.BackColor = Color.GreenYellow
+        Button6.FlatStyle = FlatStyle.Popup
+        Button6.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button6.ForeColor = SystemColors.ActiveCaptionText
+        Button6.Location = New Point(388, 489)
+        Button6.Name = "Button6"
+        Button6.Size = New Size(103, 38)
+        Button6.TabIndex = 0
+        Button6.Text = "REFRESH"
+        Button6.UseVisualStyleBackColor = False
+        ' 
+        ' Panel5
+        ' 
+        Panel5.BackColor = Color.White
+        Panel5.BorderStyle = BorderStyle.FixedSingle
+        Panel5.Controls.Add(Label9)
+        Panel5.Controls.Add(Label8)
+        Panel5.Controls.Add(Label5)
+        Panel5.Location = New Point(3, 3)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(280, 40)
+        Panel5.TabIndex = 1
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(3, 12)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(13, 15)
+        Label5.TabIndex = 0
+        Label5.Text = "1"
+        ' 
+        ' Label8
+        ' 
+        Label8.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        Label8.AutoSize = True
+        Label8.Location = New Point(99, 12)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(81, 15)
+        Label8.TabIndex = 1
+        Label8.Text = "ProductName"
+        Label8.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Label9
+        ' 
+        Label9.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        Label9.AutoSize = True
+        Label9.Location = New Point(235, 12)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(40, 15)
+        Label9.TabIndex = 2
+        Label9.Text = "499.00"
+        ' 
         ' CashierDashboard
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightCyan
         ClientSize = New Size(819, 539)
+        Controls.Add(Button6)
         Controls.Add(Panel4)
         Controls.Add(Panel2)
         Controls.Add(Button2)
@@ -316,10 +380,13 @@ Partial Class CashierDashboard
         Text = "CashierDashboard"
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
+        FlowLayoutPanel2.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
+        Panel5.ResumeLayout(False)
+        Panel5.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -346,4 +413,9 @@ Partial Class CashierDashboard
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label5 As Label
 End Class

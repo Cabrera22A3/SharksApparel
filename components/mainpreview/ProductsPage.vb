@@ -17,6 +17,7 @@ Public Class ProductsPage
     Dim READERrole As MySqlDataReader
     Dim COMMANDrole As MySqlCommand
 
+    'decline btn 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Panel1.Hide()
         TextBox1.Clear()
@@ -24,10 +25,12 @@ Public Class ProductsPage
         TextBox3.Clear()
     End Sub
 
+    'add new btn
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Panel1.Show()
     End Sub
 
+    'accept btn
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         If String.IsNullOrWhiteSpace(TextBox1.Text) OrElse String.IsNullOrWhiteSpace(TextBox2.Text) OrElse String.IsNullOrWhiteSpace(TextBox3.Text) Then
             MessageBox.Show("All fields are required.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
