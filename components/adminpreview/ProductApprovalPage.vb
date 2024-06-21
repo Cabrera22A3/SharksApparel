@@ -98,6 +98,7 @@ Public Class ProductApprovalPage
         End If
         If MsgBox("Are you sure to Delete this Product Request?", MsgBoxStyle.Question + vbYesNo) = vbYes Then
             Try
+                connAcceptedNewProduct.Open()
                 Dim cmd As New MySqlCommand(
                     "DELETE FROM `productreqtb` WHERE `product_id`=@product_id", connAcceptedNewProduct
                 )

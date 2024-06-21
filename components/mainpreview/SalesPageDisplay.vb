@@ -1,5 +1,6 @@
 ﻿Imports Google.Protobuf.WellKnownTypes
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.Expect
 Imports System.Drawing.Configuration
 Imports System.IO
 
@@ -41,6 +42,10 @@ Public Class SalesPageDisplay
     End Sub
 
     Public Sub save()
+        If conn.State = ConnectionState.Open Then
+            conn.Close()
+        End If
+        conn.Open()
         Dim query As String
         Dim queryRole As String
         query = "SELECT * FROM productreqtb WHERE product_id='" & TextBox1.Text & "'"
@@ -70,6 +75,9 @@ Public Class SalesPageDisplay
         conn.Close()
 
         Try
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
             conn.Open()
             If PictureBox1.Image Is Nothing Then
                 MessageBox.Show("Image must be inserted again.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -126,19 +134,24 @@ Public Class SalesPageDisplay
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value
-        TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value
-        TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value
-        TextBox4.Text = DataGridView1.CurrentRow.Cells(3).Value
-        ComboBox1.Text = DataGridView1.CurrentRow.Cells(4).Value
-        TextBox5.Text = DataGridView1.CurrentRow.Cells(5).Value
-        TextBox6.Text = DataGridView1.CurrentRow.Cells(6).Value
-        TextBox7.Text = DataGridView1.CurrentRow.Cells(7).Value
-        TextBox8.Text = DataGridView1.CurrentRow.Cells(8).Value
-        PictureBox1.Image = DataGridView1.CurrentRow.Cells(9).Value
+        Try
+            TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value
+            TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value
+            TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value
+            TextBox4.Text = DataGridView1.CurrentRow.Cells(3).Value
+            ComboBox1.Text = DataGridView1.CurrentRow.Cells(4).Value
+            TextBox5.Text = DataGridView1.CurrentRow.Cells(5).Value
+            TextBox6.Text = DataGridView1.CurrentRow.Cells(6).Value
+            TextBox7.Text = DataGridView1.CurrentRow.Cells(7).Value
+            TextBox8.Text = DataGridView1.CurrentRow.Cells(8).Value
+            PictureBox1.Image = DataGridView1.CurrentRow.Cells(9).Value
 
-        TextBox1.ReadOnly = True
-        Button5.Enabled = False
+            TextBox1.ReadOnly = True
+            Button5.Enabled = False
+        Catch ex As Exception
+
+        End Try
+        Button3.Enabled = False
     End Sub
 
     Sub Edit()
@@ -168,6 +181,8 @@ Public Class SalesPageDisplay
 
             i = cmd.ExecuteNonQuery
             If i > 0 Then
+                Button3.Enabled = True
+                clear()
                 MessageBox.Show("Update Success!", "NOTICE", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Update Failed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)

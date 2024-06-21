@@ -230,29 +230,29 @@ Partial Class SalesPageDisplay
         DataGridView1.AccessibleRole = AccessibleRole.None
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
-        DataGridView1.BorderStyle = BorderStyle.Fixed3D
-        DataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10})
+        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
         DataGridViewCellStyle1.BackColor = SystemColors.HighlightText
         DataGridViewCellStyle1.Font = New Font("Segoe UI", 9F)
         DataGridViewCellStyle1.ForeColor = SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = DataGridViewTriState.False
+        DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        DataGridView1.BorderStyle = BorderStyle.Fixed3D
+        DataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10})
         DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
         DataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically
         DataGridView1.Location = New Point(341, 190)
         DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         DataGridView1.RowTemplate.Height = 100
         DataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect
         DataGridView1.Size = New Size(466, 337)
         DataGridView1.TabIndex = 19
-        DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter
-        DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridView1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        DataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         ' 
         ' PictureBox1
         ' 
@@ -411,6 +411,7 @@ Partial Class SalesPageDisplay
         Column10.HeaderText = "Photo"
         Column10.ImageLayout = DataGridViewImageCellLayout.Zoom
         Column10.Name = "Column10"
+        Column10.ReadOnly = True
         Column10.Resizable = DataGridViewTriState.True
         Column10.SortMode = DataGridViewColumnSortMode.Automatic
         ' 

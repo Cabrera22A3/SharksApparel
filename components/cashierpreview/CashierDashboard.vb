@@ -10,6 +10,12 @@ Imports System.Drawing
 
 Public Class CashierDashboard
 
+    Dim prodID As String
+    Dim prodName As String
+    Dim prodQuantity As Integer
+    Dim prodRetPrice As Double
+    Dim prodRetPriceequals As Double
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Panel2.Show()
     End Sub
@@ -24,6 +30,28 @@ Public Class CashierDashboard
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        Try
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+            conn.Open()
+            Dim cmd As New MySqlCommand("SELECT * FROM productstb WHERE product_id = '" & TextBox5.Text & "'", conn)
+            dr = cmd.ExecuteReader
+
+            'cmd.Parameters.Add()
+
+            While dr.Read
+                prodID = dr("product_id")
+                prodName = dr("name")
+                prodRetPrice = dr("retail_price")
+                prodRetPriceequals = prodRetPrice * Val(TextBox6.Text)
+                ListBox1.Items.Add(TextBox6.Text & "             " & prodName & "             " & prodRetPriceequals)
+            End While
+        Catch ex As Exception
+
+        End Try
+
         Panel4.Hide()
     End Sub
 
@@ -75,5 +103,40 @@ Public Class CashierDashboard
 
     Private Sub CashierDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ReLoadCashierDashboard()
+    End Sub
+
+    Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
+
+    End Sub
+
+    Private Sub TextBox5_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox5.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Try
+                If conn.State = ConnectionState.Open Then
+                    conn.Close()
+                End If
+                conn.Open()
+                Dim cmd As New MySqlCommand("SELECT * FROM productstb WHERE product_id = '" & TextBox5.Text & "'", conn)
+                dr = cmd.ExecuteReader
+
+                'cmd.Parameters.Add()
+
+                While dr.Read
+                    TextBox4.Text = dr("name")
+                End While
+
+
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+
     End Sub
 End Class
