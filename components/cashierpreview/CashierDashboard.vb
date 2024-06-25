@@ -7,6 +7,7 @@ Imports System.Linq.Expressions
 Imports System.Diagnostics.Eventing
 Imports System.IO
 Imports System.Drawing
+Imports System.Reflection
 
 Public Class CashierDashboard
 
@@ -30,7 +31,13 @@ Public Class CashierDashboard
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
+        If String.IsNullOrWhiteSpace(TextBox6.Text) OrElse String.IsNullOrWhiteSpace(TextBox4.Text) OrElse String.IsNullOrWhiteSpace(TextBox5.Text) Then
+            MessageBox.Show("All fields are required.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+        If Not Integer.TryParse(TextBox6.Text, Nothing) Then
+            ' Handle the case where TextBox6.Text is not a valid integer
+        End If
         Try
             If conn.State = ConnectionState.Open Then
                 conn.Close()
@@ -46,11 +53,24 @@ Public Class CashierDashboard
                 prodName = dr("name")
                 prodRetPrice = dr("retail_price")
                 prodRetPriceequals = prodRetPrice * Val(TextBox6.Text)
-                ListBox1.Items.Add(TextBox6.Text & "             " & prodName & "             " & prodRetPriceequals)
+
+                totalProdRetPriceEquals += prodRetPriceequals
+
+                ListBox1.Items.Add("( " & TextBox6.Text & "X )" & "  " & prodName & "    :   ₱" & prodRetPriceequals)
             End While
+
+            ' Create a new Label to display the total
+            TextBox7.Text = "Total: ₱" & totalProdRetPriceEquals.ToString("F2")
+            TextBox7.ForeColor = Color.Black
+            TextBox7.Location = New Point(525, 426) ' Set the location as needed
+
+            TextBox2.Text = "Total: ₱" & totalProdRetPriceEquals.ToString("F2")
         Catch ex As Exception
 
         End Try
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
 
         Panel4.Hide()
     End Sub
@@ -106,11 +126,7 @@ Public Class CashierDashboard
     End Sub
 
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles TextBox5.TextChanged
-
-    End Sub
-
-    Private Sub TextBox5_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox5.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If TextBox5.Text.Length = 6 Then
             Try
                 If conn.State = ConnectionState.Open Then
                     conn.Close()
@@ -119,12 +135,9 @@ Public Class CashierDashboard
                 Dim cmd As New MySqlCommand("SELECT * FROM productstb WHERE product_id = '" & TextBox5.Text & "'", conn)
                 dr = cmd.ExecuteReader
 
-                'cmd.Parameters.Add()
-
                 While dr.Read
                     TextBox4.Text = dr("name")
                 End While
-
 
             Catch ex As Exception
 
@@ -132,11 +145,28 @@ Public Class CashierDashboard
         End If
     End Sub
 
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+    'Private Sub TextBox5_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox5.KeyDown
+    'If e.KeyCode = Keys.Enter Then
+    'Try
+    'If conn.State = ConnectionState.Open Then
+    'conn.Close()
+    'End If
+    'conn.Open()
+    'Dim cmd As New MySqlCommand("SELECT * FROM productstb WHERE product_id = '" & TextBox5.Text & "'", conn)
+    'dr = cmd.ExecuteReader
+    'While dr.Read
+    'TextBox4.Text = dr("name")
+    'End While
+    'Catch ex As Exception
+    'End Try
+    'End If
+    'End Sub
 
-    End Sub
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-
+        Panel4.Hide()
     End Sub
 End Class
